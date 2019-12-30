@@ -43,12 +43,14 @@ pip install pyfolio
 <br><br>
 # Archivos
 
-* [BCRA](https://github.com/gauss314/Bursatil-Argentina-Python/blob/master/bcra.py) +40 Endpoints de series historicas del BCRA (como reservas internacionales, tdc, m2, tasas, etc) 🚀
+* [PrimerosPasos](https://github.com/gauss314/Bursatil-Argentina-Python/blob/master/analisis%20activo.py) Bajar datos de mercado por activo
 * [CCLs](https://github.com/gauss314/Bursatil-Argentina-Python/blob/master/ccls.py) Calculo del CCL para diferentes tickers (GGAL, PAM, YPF, etc)
 * [Brechas](https://github.com/gauss314/Bursatil-Argentina-Python/blob/master/brechas.py) TDC oficial, MEP y CCL, Brecha actual CCL-Oficial, MEP-Oficial, CCL-MEP
 * [PyFolio](https://github.com/gauss314/Bursatil-Argentina-Python/blob/master/cartera%20pyfolio.py) Analisis QUANT de cartera flat
+* [BCRA](https://github.com/gauss314/Bursatil-Argentina-Python/blob/master/bcra.py) +40 Endpoints de series historicas del BCRA (como reservas internacionales, tdc, m2, tasas, etc) 🚀
 
-<br><br>
+<br>
+> Algunas capturas de los graficos
 <table>
   <tr>
     <td><img src="https://pbs.twimg.com/media/EM5FHfVXYAEWrmM?format=jpg&name=medium" width="350"></td>
@@ -112,3 +114,12 @@ pip install pyfolio
 - merval_usd : MERVAL dividido cotización del USD
 
 
+
+
+<br><br>
+
+## Créditos
+
+Utilizamos las librerías:
+- pyfolio https://github.com/quantopian/pyfolio
+- yfinance https://github.com/ranaroussi/yfinance
