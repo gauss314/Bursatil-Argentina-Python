@@ -46,6 +46,17 @@ pip install pyfolio
 * [BCRA](https://github.com/gauss314/Bursatil-Argentina-Python/blob/master/bcra.py) +40 Endpoints de series historicas del BCRA (como reservas internacionales, tdc, m2, tasas, etc) 🚀
 * [CCLs](https://github.com/gauss314/Bursatil-Argentina-Python/blob/master/ccls.py) Calculo del CCL para diferentes tickers (GGAL, PAM, YPF, etc)
 * [Brechas](https://github.com/gauss314/Bursatil-Argentina-Python/blob/master/brechas.py) TDC oficial, MEP y CCL, Brecha actual CCL-Oficial, MEP-Oficial, CCL-MEP
+* [PyFolio](https://github.com/gauss314/Bursatil-Argentina-Python/blob/master/cartera%20pyfolio.py) Analisis QUANT de cartera flat
+
+<br><br>
+<table>
+  <tr>
+    <td><img src="https://pbs.twimg.com/media/EM5FHfVXYAEWrmM?format=jpg&name=medium" width="350"></td>
+    <td><img src="https://pbs.twimg.com/media/EM5FH6lW4AMKkR2?format=jpg&name=medium" width="350"></td>
+    <td><img src="https://pbs.twimg.com/media/EM5FIXhXUAYOjpe?format=jpg&name=medium" width="350"></td>
+  </tr>
+</table>
+<br><br>
 
 
 <br><br>
