@@ -5,7 +5,10 @@ La idea era hacer un instructivo bien simple para quienes quieran empezar a code
 <br>
 <div align="center">
   
-[![Supported Python version](https://img.shields.io/pypi/pyversions/tensorflow-graphics.svg)](https://pypi.org/project/tensorflow-graphics/)
+[![Supported Python version](https://github.com/gauss314/Bursatil-Argentina-Python)](https://github.com/gauss314/Bursatil-Argentina-Python)
+
+<a href="https://github.com/gauss314/Bursatil-Argentina-Python"><img src="https://poser.pugx.org/gauss314/Bursatil-Argentina-Python/downloads" alt="Total Downloads"></a>
+<a href="https://github.com/gauss314/Bursatil-Argentina-Python"><img src="https://poser.pugx.org/gauss314/Bursatil-Argentina-Python/license" alt="License"></a>
 
 </div>
 
