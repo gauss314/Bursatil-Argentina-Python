@@ -32,11 +32,11 @@ data['Non_trading_gap'].plot(kind='line',title='Gap diario comparando Operatoria
 data['Trading_today_earning'].plot(kind='line',title='Gap diario comparando Operatoria diaria')    
 
 '''
-HOMEWORK - Tareas par ael hogar
+HOMEWORK - Tareas para el hogar
 Buscar y encontrar relaciones (en realidad es evidente) entre la operatoria
 diaria y la NO OPERATORIA NOCTURNA
 Analizar la serie de datos y evaluar la correlación.
-Genera un aoportunidad de ir en contra tendencia según muestre la no operatoria 
+Genera una oportunidad de ir en contra tendencia según muestre la no operatoria 
 previa luego del arranque (Open) para operar durante el día.
 Analizar y comentar
 '''
