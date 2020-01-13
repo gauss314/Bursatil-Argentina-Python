@@ -19,6 +19,7 @@ https://twitter.com/JohnGalt_is_www/status/1210981218768044033
 
 
  Créditos:
+ <br>
  Agradecimiento a Juan Pablo Pizano por su tiempo y dedicación
 
 Utilizamos las librerías:
