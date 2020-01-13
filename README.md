@@ -29,7 +29,7 @@ pip install pyfolio
 <br><br>
 # Archivos
 
-* [Primera Idea](https://github.com/sgarofoli/Bursatil-Argentina-Python/blob/Ideas-after-this-branch/Earning_by_detail_project.py) Discresiona ganancias según Operación vs No Operación en rueda
+* [Earnings_by_detail](https://github.com/sgarofoli/Bursatil-Argentina-Python/blob/Ideas-after-this-branch/Earning_by_detail_project.py) Discresiona ganancias según Operación vs No Operación en rueda
 * [Segunda Idea](https://github.com/sgarofoli/Bursatil-Argentina-Python/blob/Ideas-after-this-branch/daily_volatility_project.py) Analisis de volatilidad según el día y la noche
 
 
