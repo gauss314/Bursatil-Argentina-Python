@@ -39,7 +39,7 @@ def accion(cruce, pos, precio):
 
 pos = "Wait"
 while True:
-    tabla = getTabla("BTC",3,10,token)
+    tabla = getTabla("BTC",10,20,token)
     cruce = tabla['rapida'].iloc[-1] / tabla['lenta'].iloc[-1]
     precio = tabla['close'].iloc[-1]
     pos = accion(cruce, pos, precio)
