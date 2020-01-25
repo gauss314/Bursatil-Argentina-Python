@@ -1,5 +1,6 @@
 import requests, json as j, pandas as pd, time
 token = "pk_0c3fc9c0a42d41099492b08fddc3eef7"
+#el token es temporal solo a fines didacticos, saquen el suyo gratuito en https://min-api.cryptocompare.com/
 
 def getData(s,token):        
     url = "https://min-api.cryptocompare.com/data/v2/histominute?fsym="+s
