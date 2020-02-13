@@ -23,6 +23,7 @@ def getTabla(simbolo,nRapida,nLenta,token):
     data = getData(simbolo,token)
     rapidas = sma(data['close'],nRapida,"rapida")
     lentas = sma(data['close'],nLenta,"lenta")
+    #alternativa version de pandas para media: lentas = datos['close'].rolling(20).mean().dropna()
     tabla = rapidas.join(lentas).join(data['close']).dropna().reset_index()
     return tabla
 
