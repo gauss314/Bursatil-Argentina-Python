@@ -11,10 +11,10 @@ Compara el yield buy & hold de cartera vs rotar 5 mejores o 5 peores de semana a
 años = 11
 start = dt.date.today()-dt.timedelta(365*años)
 end = dt.date.today()
-tickers = ["AAPL", "AMZN", "NFLX", "FB", "KO", "GE", "V", "JPM", "SPY", "XOM", "TSLA", "VZ",'BAC','BABA']
 
-tickers = ["GGAL", "BMA", "YPF", "PAM", "TGS", "CRESY", "IRS", "TEO",
-           "MELI", "EDN", "BBAR", "CEPU", "TX", "SUPV", "LOMA"]
+tickers = ["GGAL", "BMA", "YPF", "PAM", "TGS", "CRESY", "IRS", "TEO", "MELI", "EDN", "BBAR", "CEPU", "TX", "SUPV", "LOMA"]
+tickersUSA = ["AAPL", "AMZN", "NFLX", "FB", "KO", "GE", "V", "JPM", "SPY", "XOM", "TSLA", "VZ",'BAC','BABA']
+
 data =  yf.download(tickers, start=start, end=end, interval="1wk")['Adj Close']
 yields = data.pct_change()
 yields['yield']=yields.mean(axis=1)
@@ -71,3 +71,4 @@ for i in range(años+1):
     ax2[row][col].plot(worstYr.yieldAcum,  lw=1, c='tab:red')
     ax2[row][col].set_title(str(end.year-años +i), y=0.83, fontsize=20, alpha=0.4)
     plt.setp(ax2[row][col].get_xticklabels(), visible=False)    
+print(results)
