@@ -31,8 +31,8 @@ best['yield']=best.mean(axis=1)
 worst['yield']=worst.mean(axis=1)
 
 results = pd.DataFrame()
-results.loc['Buy & Hold','CAGR'] = (yields['yield']+1).prod()**(1/10)-1
-results.loc['Best 5 Portfolio','CAGR'] = (best['yield']+1).prod()**(1/10)-1
-results.loc['Worst 5 Portfolio','CAGR'] = (worst['yield']+1).prod()**(1/10)-1
+results.loc['Buy & Hold','CAGR'] = (yields['yield']+1).prod()**(1/años)-1
+results.loc['Best 5 Portfolio','CAGR'] = (best['yield']+1).prod()**(1/años)-1
+results.loc['Worst 5 Portfolio','CAGR'] = (worst['yield']+1).prod()**(1/años)-1
 
 print(results.round(2))
