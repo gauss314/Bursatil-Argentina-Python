@@ -17,7 +17,6 @@ tickersUSA = ["AAPL", "AMZN", "NFLX", "FB", "KO", "GE", "V", "JPM", "SPY", "XOM"
 
 data =  yf.download(tickers, start=start, end=end, interval="1wk")['Adj Close']
 yields = data.pct_change()
-yields['yield']=yields.mean(axis=1)
 yieldsPast = yields.shift()
 
 best, worst = pd.DataFrame(), pd.DataFrame()
@@ -35,6 +34,7 @@ best = best.transpose()
 worst = worst.transpose()
 best['yield']=best.mean(axis=1)
 worst['yield']=worst.mean(axis=1)
+yields['yield']=yields.mean(axis=1)
 
 results = pd.DataFrame()
 results.loc['Buy & Hold','CAGR'] = (yields['yield']+1).prod()**(1/10)-1
