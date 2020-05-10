@@ -36,4 +36,3 @@ results.loc['Best 5 Portfolio','CAGR'] = (best['yield']+1).prod()**(1/10)-1
 results.loc['Worst 5 Portfolio','CAGR'] = (worst['yield']+1).prod()**(1/10)-1
 
 print(results.round(2))
-print(best)
