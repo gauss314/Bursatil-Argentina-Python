@@ -25,7 +25,7 @@ def parsear(filas):
         dic['bid'] = filas[3*i+1].text
         dic['ask'] = filas[3*i+2].text
         rueda = pd.DataFrame.from_dict(dic, orient='index').transpose().set_index('fecha')
-        rueda.index = pd.to_datetime(rueda.index)
+        rueda.index = pd.to_datetime(rueda.index, format='%d-%m-%y ')
         mensual = pd.concat([mensual,rueda], axis=0)
     return mensual
 
