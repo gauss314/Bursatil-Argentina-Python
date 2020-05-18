@@ -19,7 +19,7 @@ def scrap(año, mes):
 
 def parsear(filas):
     mensual = pd.DataFrame() 
-    for i in range(3, int(len(list(filas))/3)):
+    for i in range(1, int(len(list(filas))/3)):
         dic = {}
         dic['fecha'] = filas[3*i].text
         dic['bid'] = filas[3*i+1].text
