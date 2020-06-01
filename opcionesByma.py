@@ -19,8 +19,22 @@ df[df.columns[1:7]] = df[df.columns[1:7]].apply(pd. to_numeric, errors='coerce')
 # Esta Línea hace lo propio con las dos ultimas pero  como son enteros no hace falta redondear
 df[df.columns[8:10]] = df[df.columns[8:10]].apply(pd. to_numeric, errors='coerce')
 
-# #Lo guardo en un excel
+# Lo guardo en un excel
 df. to_excel('opciones.xlsx')
 
 # Imprimo el DataFrame
 print(df)
+
+'''
+# O Directamente esta función aun mas comprimida:
+# OPC: Opciones, CED: Cedears, LID: Panel lider
+
+def rava(panel):
+    tabs = {'OPC':8,'CED':8,'LID':9,}
+    url = 'http://www.rava.com/precios/panel.php?m='+panel
+    df = pd.read_html(url, thousands='.',header=0)[tabs[panel]]
+    df = df.replace(',','.',regex=True).set_index('Especie').drop(['Hora'],axis=1)
+    df = df.apply(pd. to_numeric, errors='coerce').round(2)
+    return df
+
+'''
