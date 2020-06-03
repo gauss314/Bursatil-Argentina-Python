@@ -6,7 +6,7 @@ serie = seriesAlpha(key='IUIHYQWABRBAMCH6', output_format='pandas')
 data, metadata = serie.get_intraday(symbol=ticker,interval='1min', outputsize='full')
 data.columns = ['Open','High','Low','Close','Volume']
 
-n = 16 # filas y cols de la matriz de rangos nxn 
+n = 12 # filas y cols de la matriz de rangos nxn 
 quantiles = [i/n for i in range(n)]
 precios = list(data.quantile(quantiles).Close.round(2))
 volumenes = list(data.quantile(quantiles).Volume.round(2))
