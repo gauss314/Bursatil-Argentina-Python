@@ -27,7 +27,7 @@ cols=['Ticker','Last','TradeTime']  # Que columnas quiero de la tabla
 
 
 rows = list(range(row_from-1,row_to))
-r = pd.read_csv(urlGoogle + token + '/export?gid='+gid+'&format=csv',
+r = pd.read_csv(url + token + '/export?gid='+gid+'&format=csv',
                 usecols=cols, skiprows = lambda x: x not in rows)
 
 print('Tabla de la Hoja de Precios\n', r)
