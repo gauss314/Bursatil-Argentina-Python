@@ -1,10 +1,11 @@
 import requests, json as j, pandas as pd, time
-token = "pk_0c3fc9c0a42d41099492b08fddc3eef7"
-#el token es temporal solo a fines didacticos, saquen el suyo gratuito en https://min-api.cryptocompare.com/
+
+# Ejercicio didactico de un taller dictado en Digital House para mujeres traders
+# La idea es ver la lógica de un bot de trading, no tiene aplicación real es solo a fines didácticos de mostrar la idea
 
 def getData(s,token):        
     url = "https://min-api.cryptocompare.com/data/v2/histominute?fsym="+s
-    url += "&tsym=USD&limit=100&e=bitstamp&token="+token    
+    url += "&tsym=USD&limit=100&e=bitstamp"    
     json = j.loads(requests.get(url = url).text)
     df = pd.DataFrame(json['Data']['Data']).dropna()
     return df
