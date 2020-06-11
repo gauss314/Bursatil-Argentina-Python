@@ -22,5 +22,5 @@ for country in countries:
     ax.plot(p['pct_change'], lw=width, label=country)
     ax.legend(fontsize=14, loc='upper right')
     ax.set_xlim(dt.datetime(2020,5,1),dt.datetime.now())
-    ax.set_ylim(0.02,0.09)
+    ax.set_ylim(0.03,0.1)
     
