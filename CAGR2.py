@@ -15,6 +15,7 @@ end = dt.date.today()
 tickers = ["GGAL", "BMA", "YPF", "PAM", "TGS", "CRESY", "IRS", "TEO", "MELI", "EDN", "BBAR", "CEPU", "TX", "SUPV", "LOMA"]
 tickersUSA = ["AAPL", "AMZN", "NFLX", "FB", "KO", "GE", "V", "JPM", "SPY", "XOM", "TSLA", "VZ",'BAC','BABA']
 
+
 data =  yf.download(tickers, start=start, end=end, interval="1wk")['Adj Close']
 yields = data.pct_change()
 yieldsPast = yields.shift()
