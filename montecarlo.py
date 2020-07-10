@@ -6,8 +6,8 @@ fig, ax = plt.subplots(figsize=(12,12))
 
 mu = 0.04  # media diaria del pct_change
 sigma = 2 # Volatilidad diaria del pct_change
-ruedas = 750
-simulaciones = 10
+ruedas = 250
+simulaciones = 1000
 
 capital = [[100] for i in range(simulaciones)]
 
