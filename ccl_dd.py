@@ -19,7 +19,7 @@ ccl_dd = ((ccl/ccl_max_h-1)*100).dropna().rolling(30).mean()
 fig, ax = plt.subplots(figsize=(16,10), nrows=2)
 
 ax[0].hist(ccl_dd, bins=150, width=0.1, color='w', alpha=0.3)
-ax[0].set_title('CCL Histograma', y=1, fontsize=16)
+ax[0].set_title('CCL DrawDowns Histograma', y=1, fontsize=16)
 
 ax[1].plot(ccl_dd, color='silver', lw=1)
 ax[1].fill_between(ccl_dd.index, 0, ccl_dd, color='red', alpha=0.15)
