@@ -1,40 +1,69 @@
 import pandas as pd
-url = 'http://www.rava.com/precios/panel.php?m=OPC'
+import requests
+from bs4 import BeautifulSoup
+from IPython.display import HTML
 
-# Esta linea lee a url, el [8] es porque es la 8va tabla de la pagina la que tiene las opciones
-df = pd.read_html(url, thousands='.')[8]
+def extraer_texto(texto, start_marker, end_marker):
+    try:
+        start = texto.index(start_marker) + len(start_marker)
+        end = texto.index(end_marker, start)
+    except ValueError as e:
+        print(f"Error: {e}")
+        return 
+    
+    return texto[start:end]
 
-# Esta linea le pone como nombres de columnas los valores que estaban en la primera fila
-df.columns = list(df.loc[0,:])
 
-# Esta linea elimina la primera fila que estaba con nombres de columnas
-df = df.drop(0,axis=0)
+url = 'https://www.rava.com/cotizaciones/opciones'
+find = 'opciones-p'
+find_also = "body"
 
-# Esta linea remplaza las comas por puntos ya que pandas transforma a numero los flotantes con punto no con coma
-df = df.replace(',','.',regex=True)
+""""
+url = 'https://www.rava.com/cotizaciones/cedears'
+find = 'cedears-p'
+find_also = "body"
 
-# Esta linea transforma a numero las columnas de 1 a 7 y redondea a 2 decimales
-df[df.columns[1:7]] = df[df.columns[1:7]].apply(pd. to_numeric, errors='coerce').round(2)
+url = 'https://www.rava.com/cotizaciones/bonos'
+find = 'bonos-p'
+find_also = "body"
 
-# Esta Línea hace lo propio con las dos ultimas pero  como son enteros no hace falta redondear
-df[df.columns[8:10]] = df[df.columns[8:10]].apply(pd. to_numeric, errors='coerce')
+url = 'https://www.rava.com/cotizaciones/futuros'
+find = 'futuros-p'
+find_also = "ROFEX"
+
+url = 'https://www.rava.com/cotizaciones/acciones-argentinas'
+find = 'acciones-argentinas'
+find_also = "GEN" # "GEN" o "LID"
+"""
+
+# Obtiene datos url
+try: 
+    res = requests.get(url, timeout=10)
+except requests.exceptions.HTTPError as err:
+    raise SystemExit(err)
+
+soup = BeautifulSoup(res.content, "lxml")
+
+# Extrae info opciones
+opciones = extraer_texto(soup.__str__(), '<' + find  +' :', '</' + find +'>' )
+opciones = (extraer_texto(opciones, '"'+ find_also + '":', '}],') + '}')[1:]
+
+# Crea df con los datos
+df = pd.read_json('[' + opciones + ']', orient='records')
+
+if find == 'acciones-argentinas':
+    opciones = extraer_texto(soup.__str__(), '<' + find  +' :', '</' + find +'>' )
+    find_also = "LID"
+    opciones = opciones[opciones.rfind(find_also)-1:]
+    opciones = (extraer_texto(opciones, '"'+ find_also + '":', '}]') + '}')[1:]
+    df1 = pd.read_json('[' + opciones + ']', orient='records')
+    df = pd.concat([df1, df], ignore_index=True)
+
+df = df.fillna("")
+
 
 # Lo guardo en un excel
 df. to_excel('opciones.xlsx')
 
 # Imprimo el DataFrame
 print(df)
-
-'''
-# O Directamente esta función aun mas comprimida:
-# OPC: Opciones, CED: Cedears, LID: Panel lider
-
-def rava(panel):
-    tabs = {'OPC':8,'CED':8,'LID':9,}
-    url = 'http://www.rava.com/precios/panel.php?m='+panel
-    df = pd.read_html(url, thousands='.',header=0)[tabs[panel]]
-    df = df.replace(',','.',regex=True).set_index('Especie').drop(['Hora'],axis=1)
-    df = df.apply(pd. to_numeric, errors='coerce').round(2)
-    return df
-
-'''
